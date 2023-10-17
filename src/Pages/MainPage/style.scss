@@ -1,0 +1,36 @@
+main {
+  display: flex;
+  flex-direction: column;
+
+  width: 55%;
+  padding: 0 2%;
+
+  background-color: var(--primary-background-color);
+}
+
+aside {
+  width: 25%;
+  padding: 0 2% 0 0;
+
+  background-color: var(--primary-background-color);
+}
+
+.header {
+  height: 13.7%;
+}
+
+.words-set {
+  height: 36.3%;
+}
+
+.statistics {
+  height: 50%;
+}
+
+.profile-card {
+  height: 50%;
+}
+
+.quick-start-set {
+  height: 50%;
+}

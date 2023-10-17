@@ -1,0 +1,33 @@
+.icon-button {
+  display: flex;
+  align-self: center;
+
+  padding: calc(5px + 0.5rem);
+  background-color: white;
+  border-radius: 50%;
+
+  svg {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+}
+
+.history-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  .move-history-button {
+    font-size: 2rem;
+    stroke: #959ba5;
+
+    background-color: #eaeaf2;
+
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .active {
+    stroke: #242730;
+  }
+}

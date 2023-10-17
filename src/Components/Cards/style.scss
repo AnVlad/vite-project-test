@@ -1,0 +1,88 @@
+.set-card {
+  background: linear-gradient(to bottom left, #9269fb, #d573b1);
+  flex: 0 0 calc((100% - 48px) / 3);
+  max-width: calc((100% - 48px) / 3);
+
+  min-width: 200px;
+
+  padding: 1.6rem;
+
+  border-radius: 24px;
+
+  .card-img {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img {
+    max-width: 13.2rem;
+    max-height: 13.2rem;
+    width: 100%;
+    height: 100%;
+
+    margin-top: -1.6rem;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  .like-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    align-self: self-start;
+  }
+}
+
+.start-card {
+  display: flex;
+  gap: 1.6rem;
+
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: 10px 10px 80px 0px rgba(63, 39, 102, 0.1);
+  backdrop-filter: blur(10px);
+
+  max-width: 24rem;
+  width: 100%;
+
+  padding: 1.6rem;
+
+  .icon {
+    width: 6.4rem;
+    height: 6.4rem;
+
+    padding: 4px;
+
+    background: linear-gradient(to bottom left, #9269fb, #d573b1);
+    border-radius: 16px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .details {
+    align-self: center;
+
+    h1 {
+      color: #242730;
+
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 140%;
+
+      padding: 0;
+    }
+
+    p {
+      color: #959ba5;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 140%;
+    }
+  }
+}

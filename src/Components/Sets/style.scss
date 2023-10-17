@@ -1,0 +1,60 @@
+.list-header {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1rem 0;
+
+  h1 {
+    color: #242730;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  span {
+    color: #242730;
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+.list-wrap {
+  width: 100%;
+  margin-top: 2rem;
+  overflow-x: hidden;
+
+  .cards-list {
+    width: 100%;
+
+    display: flex;
+    gap: 2.4rem;
+  }
+}
+
+.quick-start-set {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  // margin-top: 5rem;
+
+  h1 {
+    color: #242730;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 140%;
+
+    align-self: flex-start;
+
+    padding: 1rem 0;
+  }
+
+  .cards-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+  }
+}
