@@ -1,12 +1,23 @@
-import { Outlet } from 'react-router-dom';
-import './App.scss';
-import NavigationLayout from './Layouts/NavigationLayout';
+import { Provider } from 'react-redux';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+import MainPage from './Pages/MainPage/MainPage';
+import { setupStore } from './redux/store.ts';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainPage />,
+  },
+]);
 
 function App() {
+  const store = setupStore();
+
   return (
-    <NavigationLayout>
-      <Outlet />
-    </NavigationLayout>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   );
 }
 

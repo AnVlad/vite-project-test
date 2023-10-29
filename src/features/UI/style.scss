@@ -1,0 +1,225 @@
+.icon-button {
+  display: flex;
+  align-self: center;
+
+  position: relative;
+
+  padding: calc(5px + 0.5rem);
+  background-color: white;
+  border-radius: 50%;
+
+  svg {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  &:active {
+    animation: ripple 0.6s linear;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 2px solid #00000081;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: expandOutline 0.6s ease-out;
+    }
+  }
+}
+
+.history-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  .move-history-button {
+    font-size: 2rem;
+    stroke: #959ba5;
+
+    background-color: #eaeaf2;
+
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .active {
+    stroke: #242730;
+  }
+}
+
+@keyframes expandOutline {
+  to {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.burger {
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 2rem 1.5rem;
+
+  border-radius: 8px;
+
+  div {
+    width: 2rem;
+    height: 0.3em;
+    border-radius: 20px;
+    background: black;
+
+    &::before,
+    &::after {
+      transition: font-size 0s;
+      content: '';
+      display: block;
+      position: absolute;
+      width: 2rem;
+      height: 0.3rem;
+      background: black;
+      border-radius: 20px;
+    }
+
+    &::before {
+      margin-top: -1em;
+    }
+    &::after {
+      margin-top: 1em;
+    }
+  }
+}
+
+.burger-wrap {
+  display: flex;
+
+  .burger-button {
+    align-self: center;
+
+    div {
+      transition: all 0.4s, font-size 0s;
+      &::before,
+      &::after {
+        transition: font-size 0s;
+        transform-origin: center center;
+      }
+    }
+    &.toggled {
+      > div::before {
+        animation: burgTop 0.4s linear forwards;
+      }
+      > div {
+        animation: burg 0.4s linear forwards;
+      }
+      > div::after {
+        animation: burgBottom 0.4s linear forwards;
+      }
+    }
+
+    &.unToggled {
+      > div::before {
+        animation: burgTopReset 0.4s linear forwards;
+      }
+      > div {
+        animation: burgReset 0.4s linear forwards;
+      }
+      > div::after {
+        animation: burgBottomReset 0.4s linear forwards;
+      }
+    }
+    @keyframes burg {
+      50% {
+        transform: rotate(0deg);
+        background: transparent;
+      }
+      100% {
+        transform: rotate(360deg);
+        background: transparent;
+      }
+    }
+    @keyframes burgTop {
+      50% {
+        margin-top: 0;
+        transform: rotate(0deg);
+      }
+      100% {
+        margin-top: 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    @keyframes burgBottom {
+      50% {
+        margin-top: 0;
+        transform: rotate(0deg);
+      }
+      100% {
+        margin-top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    @keyframes burgReset {
+      0% {
+        transform: rotate(0deg);
+        background: transparent;
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+    @keyframes burgTopReset {
+      0% {
+        transform: rotate(45deg);
+        margin-top: 0;
+      }
+      50% {
+        transform: rotate(0deg);
+        margin-top: 0rem;
+      }
+      100% {
+        transform: rotate(0deg);
+        margin-top: 1rem;
+      }
+    }
+
+    @keyframes burgBottomReset {
+      0% {
+        transform: rotate(-45deg);
+        margin-top: 0;
+      }
+      50% {
+        margin-top: 0rem;
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(0deg);
+        margin-top: -1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 765px) {
+  .burger-wrap {
+    display: flex;
+    z-index: 3;
+  }
+}
+
+@media (min-width: 765px) {
+  .burger-wrap {
+    display: none;
+  }
+}

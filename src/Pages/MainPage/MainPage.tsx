@@ -1,24 +1,28 @@
-import HeaderBar from '../../Components/Header/HeaderBar';
-import WordSetsCarousel from '../../Components/Sets/WordSetsCarousel';
+import { useState } from 'react';
 
 import './style.scss';
-import Statistics from '../../Components/Sets/Statistics';
-import ProfileCard from '../../Components/UserProfile/ProfileCard';
-import QuickStartSet from '../../Components/Sets/QuickStartSet';
+import Statistics from '../../features/Main/Statistics/Statistics';
+import ProfileCard from '../../features/AsideSection/UserProfile/ProfileCard';
+import QuickStartSet from '../../features/AsideSection/QuickStartSet/QuickStartSet';
+import WordsSetsLayout from '../../features/Layouts/WordsSetsLayout';
+import DesktopNav from '../../features/Navigation/DesktopNav';
+import HeaderBar from '../../features/Main/Header/HeaderBar';
 
 const MainPage = () => {
+  const [showNav, setShowNav] = useState(false);
   return (
-    <>
+    <div className='wrapper'>
+      <DesktopNav showNav={showNav} />
       <main>
-        <HeaderBar />
-        <WordSetsCarousel />
+        <HeaderBar showNav={showNav} setShowNav={setShowNav} />
+        <WordsSetsLayout />
         <Statistics />
       </main>
       <aside>
         <ProfileCard />
         <QuickStartSet />
       </aside>
-    </>
+    </div>
   );
 };
 

@@ -1,9 +1,19 @@
+body {
+  background: linear-gradient(to bottom, #9269fb, #d573b1);
+}
+
+nav {
+  width: 20%;
+  transition: 1s ease-out;
+}
+
 main {
   display: flex;
   flex-direction: column;
 
   width: 55%;
   padding: 0 2%;
+  transition: 1s ease-out;
 
   background-color: var(--primary-background-color);
 }
@@ -11,6 +21,7 @@ main {
 aside {
   width: 25%;
   padding: 0 2% 0 0;
+  transition: 1s ease-out;
 
   background-color: var(--primary-background-color);
 }
@@ -33,4 +44,26 @@ aside {
 
 .quick-start-set {
   height: 50%;
+}
+
+@media (max-width: 900px) {
+  main {
+    width: 80%;
+    transition: 0s ease-out;
+  }
+
+  aside {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 80%;
+    transition: 1s ease-out;
+  }
+
+  aside {
+    display: none;
+  }
 }
